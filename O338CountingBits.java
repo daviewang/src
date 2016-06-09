@@ -1,0 +1,9 @@
+public class O338CountingBits {
+	public int[] countingBits(int num) {
+		int[] res = new int[num + 1];
+		for (int i = 0; i <= num; i++) {
+			res[i] = res[i >> 1] + (i & 1);
+		}
+		return res;
+	}
+}
