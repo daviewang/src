@@ -11,6 +11,6 @@ public class O201BitwiseANDNumsRange {
 	
 	public static void main(String[] args) {
 		O201BitwiseANDNumsRange e = new O201BitwiseANDNumsRange();
-		System.out.println(e.rangeBitwiseAnd(6, 7));
+		System.out.println(e.rangeBitwiseAnd(5, 7));
 	}
 }

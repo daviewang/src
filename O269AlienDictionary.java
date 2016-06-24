@@ -32,7 +32,7 @@ public class O269AlienDictionary {
 						Set<Character> set = map.get(c1);
 						set.add(c2);
 						map.put(c1, set);
-						degree.put(c1, degree.get(c2) + 1);
+						degree.put(c2, degree.get(c2) + 1);
 					}
 					else {
 						Set<Character> set = new HashSet<>();

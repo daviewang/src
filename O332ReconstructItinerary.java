@@ -30,7 +30,7 @@ public class O332ReconstructItinerary {
 	}
 	public static void main(String[] args) {
 		O332ReconstructItinerary e = new O332ReconstructItinerary();
-		String[][] tickets = {{"MUC","LHR"},{"JFK","MUC"},{"SFO","SJC"},{"LHR","SFO"}};
+		String[][] tickets = {{"JFK","KUL"},{"JFK","NRT"},{"NRT","JFK"}};
 		e.findItinerary(tickets);
 	}
 
