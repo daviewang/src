@@ -41,17 +41,25 @@ public class O146LRUCache {
 		if (map.containsKey(key)) {
 			DLinkedNode node = map.get(key);
 			remove(node);
+			minQueue.remove(node);
+			maxQueue.remove(node);
 			node.val = val;
 			setHead(node);
+			minQueue.offer(node);
+			maxQueue.offer(node);
 		}
 		else {
 			DLinkedNode node = new DLinkedNode(key, val);
 			if (map.size() >= capacity) {
 				map.remove(end.key);
+				minQueue.remove(end);
+				maxQueue.remove(end);
 				remove(end);	
 			}
 			setHead(node);
 			map.put(key, node);
+			minQueue.offer(node);
+			maxQueue.offer(node);
 		}
 	}
 	public int get(int key) {
@@ -93,5 +101,16 @@ public class O146LRUCache {
 		head = node;
 		if (end == null)
 			end = head;
+	}
+	public static void main(String[] args) {
+		O146LRUCache e = new O146LRUCache(3);
+		e.set(1, 1);
+		e.set(2, 2);
+		e.set(3, 3);
+		System.out.println(e.getMin());
+		System.out.println(e.getMax());
+		e.set(1, 5);
+		System.out.println(e.getMin());
+		System.out.println(e.getMax());
 	}
 }
