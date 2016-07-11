@@ -21,7 +21,7 @@ public class O361BombEnemy {
 				}
 				if (i == 0 || grid[i - 1][j] == 'W') {
 					colCache[j] = 0;
-					for (int k = i; k < row && grid[i][k] != 'W'; k++) {
+					for (int k = i; k < row && grid[k][j] != 'W'; k++) {
 						if (grid[k][j] == 'E') {
 							colCache[j]++;
 						}

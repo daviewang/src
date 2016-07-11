@@ -8,9 +8,9 @@ public class O370RangeAddition {
 			int start = update[0];
 			int end = update[1];
 			int val = update[2];
-			res[start] = val;
+			res[start] += val;
 			if (end < length - 1) {
-				res[end + 1] = - val;
+				res[end + 1] += - val;
 			}
 		}
 		for (int i = 1; i < length; i++) {
