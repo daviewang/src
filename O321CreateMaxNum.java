@@ -47,4 +47,9 @@ public class O321CreateMaxNum {
 		}
 		return res;
 	}
+	public static void main(String[] args) {
+		O321CreateMaxNum e = new O321CreateMaxNum();
+		int[] in = {4, 5, 1, 100};
+		e.maxArray(in, 2);
+	}
 }

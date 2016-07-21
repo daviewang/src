@@ -29,7 +29,7 @@ public class O353SnakeGame {
 		this.width = width;
 		this.food = food;
 		snake.add(new Position(0, 0));
-		int snakeLen = 0;
+		snakeLen = 0; //决定food的位置，和返回值，从0开始
     }
 
     /** Moves the snake.
@@ -69,7 +69,7 @@ public class O353SnakeGame {
 				snakeLen++;
 			}
 		}
-		while(snake.size() >= snakeLen) snake.removeLast();
+		while(snake.size() > snakeLen + 1) snake.removeLast();
 		return snakeLen;
     }
 

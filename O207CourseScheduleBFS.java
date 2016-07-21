@@ -16,7 +16,7 @@ public class O207CourseScheduleBFS {
 			graph.get(pre[1]).add(pre[0]);
 			degree[pre[0]]++;
 		}
-		for (int i = 0; i < degree.length; i++) {
+		for (int i = 0; i < numCourses; i++) {
 			if (degree[i] == 0) {
 				queue.offer(i);
 				count++;
