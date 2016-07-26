@@ -23,7 +23,7 @@ public class O305NumberIslandsII {
 				int nextRoot = findRoot(roots, nextPos);
 				if (pos != nextRoot) {
 					roots[pos] = nextRoot;
-					pos = nextRoot;
+					pos = nextRoot; //×ª»»root
 					singleRes--;
 				}
 			}
