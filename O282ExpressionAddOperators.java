@@ -9,7 +9,7 @@ public class O282ExpressionAddOperators {
 	}
 	
 	private void dfs(List<String> res, String num, String singleRes, int pos, long currSum, long lastNum, int target) {
-		if (pos >= num.length()) {
+		if (pos == num.length()) {
 			if (target == currSum) {
 				res.add(singleRes);
 			}
@@ -17,7 +17,7 @@ public class O282ExpressionAddOperators {
 		} 
 		
 		for (int i = pos; i < num.length(); i++) {
-			if (i != pos && num.charAt(pos) == '0') {
+			if (i != pos && num.charAt(pos) == '0') { //0在第一位是可以的，可以作为单独的0.以后就不行，如05
 				break;
 			}
 			String currNumStr = num.substring(pos, i + 1);

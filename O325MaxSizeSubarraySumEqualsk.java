@@ -24,7 +24,7 @@ public class O325MaxSizeSubarraySumEqualsk {
 	}
 	public static void main(String[] args) {
 		O325MaxSizeSubarraySumEqualsk e = new O325MaxSizeSubarraySumEqualsk();
-		int[] in = {1, -1, 5, -2, 3};
-		e.maxSubArrayLen(in, 3);
+		int[] in = {1, -1, 100};
+		e.maxSubArrayLen(in, 99);
 	}
 }

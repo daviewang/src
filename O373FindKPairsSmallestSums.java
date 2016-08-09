@@ -33,11 +33,17 @@ public class O373FindKPairsSmallestSums {
 			if (nextItem.j < nums2.length - 1) {
 				pq.offer(new Data(nextItem.i, nextItem.j + 1, nums1[nextItem.i] + nums2[nextItem.j + 1]));
 			}
-			if (nextItem.j == 0 && nextItem.i < nums1.length - 1) {
+			if (nextItem.j == 0 && nextItem.i < nums1.length - 1) { //Until the first item of next row appears, always add cols.
 				pq.offer(new Data(nextItem.i + 1, nextItem.j, nums1[nextItem.i + 1] + nums2[nextItem.j]));
 			}
 		}
 		return res;
+	}
+	public static void main(String[] args) {
+		O373FindKPairsSmallestSums e = new O373FindKPairsSmallestSums();
+		int[] nums1 = {1, 7, 11};
+		int[] nums2 = {2, 4, 6};
+		e.kSmallestPairs(nums1, nums2, 10);
 	}
 }
 			

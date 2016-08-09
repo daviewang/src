@@ -45,6 +45,7 @@ public class O267PalindromePermutationII {
 				list.add(c);
 			}
 		}
+		//List在这里已经是有序的了
 		getPermutation(res, list, new boolean[list.size()], new StringBuilder(), mid);
 		return res;
 	}
@@ -56,18 +57,19 @@ public class O267PalindromePermutationII {
 			return;
 		}
 		for (int i = 0; i < list.size(); i++) {
-			if (visited[i]) continue;
 			if (i > 0 && list.get(i) == list.get(i - 1) && visited[i - 1]) continue;
-			sb.append(list.get(i));
-			visited[i] = true;
-			getPermutation(res, list, visited, sb, mid);
-			visited[i] = false;
-			sb.deleteCharAt(sb.length() - 1);
+			if (!visited[i]) {
+				sb.append(list.get(i));
+				visited[i] = true;
+				getPermutation(res, list, visited, sb, mid);
+				visited[i] = false;
+				sb.deleteCharAt(sb.length() - 1);
+			}
 		}
 	}
 	
 	public static void main(String[] args) {
 		O267PalindromePermutationII e = new O267PalindromePermutationII();
-		e.generatePalindromes("aacccbb");
+		e.generatePalindromes("aaaaccb");
 	}
 }

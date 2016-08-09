@@ -41,4 +41,12 @@ public class O253MeetingRoomsII {
 		}
 		return pq.size();
 	}
+	public static void main(String[] args) {
+		O253MeetingRoomsII e = new O253MeetingRoomsII();
+		Interval a = e.new Interval(0, 5);
+		Interval b = e.new Interval(3, 7);
+		Interval c = e.new Interval(4, 9);
+		Interval[] intervals = {a, b, c};
+		e.meetingRooms(intervals);
+	}
 }

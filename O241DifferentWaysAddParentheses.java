@@ -30,7 +30,7 @@ public class O241DifferentWaysAddParentheses {
 			}
 		}
 		if (res.size() == 0) {
-			res.add(Integer.valueOf(input));
+			res.add(Integer.parseInt(input));
 		}
 		map.put(input, res);
 		return res;

@@ -25,7 +25,7 @@ public class O271EncodeDecodeStrings {
 		while (i < s.length()) {
 			int slash = s.indexOf("/", i);
 			int len = Integer.valueOf(s.substring(i, slash));
-			String singleRes = s.substring(slash + 1, slash + len + 1);
+			//String singleRes = s.substring(slash + 1, slash + len + 1);
 			i = slash + len + 1;
 		}
 		return res;

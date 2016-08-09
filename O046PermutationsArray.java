@@ -1,8 +1,7 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class O047PermutationsArray {
+public class O046PermutationsArray {
 	public List<List<Integer>> permute(int[] nums) {
 		List<List<Integer>> res = new ArrayList<>();
 		if (nums == null || nums.length == 0) return res;

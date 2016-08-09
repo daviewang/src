@@ -9,16 +9,12 @@ public class O244ShortestWordDistanceII {
 	public O244ShortestWordDistanceII(String[] words) {
 		for (int i = 0; i < words.length; i++) {
 			String key = words[i];
-			if (map.containsKey(key)) {
-				List<Integer> list = map.get(key);
-				list.add(i);
-				map.put(key, list);
+			if (!map.containsKey(key)) {
+				map.put(key, new ArrayList<>());
 			}
-			else {
-				List<Integer> list = new ArrayList<>();
-				list.add(i);
-				map.put(key, list);
-			}
+			List<Integer> l = map.get(key);
+			l.add(i);
+			map.put(key, l);
 		}
 	}
 	
@@ -36,6 +32,6 @@ public class O244ShortestWordDistanceII {
 	public static void main(String[] args) {
 		String[] words = {"practice", "makes", "perfect", "coding", "makes"};
 		O244ShortestWordDistanceII e = new O244ShortestWordDistanceII(words);
-		System.out.println(e.shortest("practice", "coding"));
+		System.out.println(e.shortest("makes", "coding"));
 	}
 }

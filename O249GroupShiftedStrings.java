@@ -13,24 +13,12 @@ public class O249GroupShiftedStrings {
 		Map<String, List<String>> map = new HashMap<>();
 		
 		for (String str : strings) {
-			int offset = str.charAt(0) - 'a';
-			StringBuilder sb = new StringBuilder();
-			for (int i = 0; i < str.length(); i++) {
-				char c = (char)(str.charAt(i) - offset);
-				if (c < 'a') {
-					c += 26;
-				}
-				sb.append(c);
-			}
-			String key = sb.toString();
+			String key = generateKey(str);
 			if (!map.containsKey(key)) {
 				List<String> list = new ArrayList<>();
-				list.add(str);
 				map.put(key, list);
 			}
-			else {
-				map.get(key).add(str);
-			}
+			map.get(key).add(str);
 		}
 		for (String key : map.keySet()) {
 			List<String> list = map.get(key);
@@ -38,6 +26,17 @@ public class O249GroupShiftedStrings {
 			res.add(list);
 		}
 		return res;
+	}
+	
+	private String generateKey(String str) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 1; i < str.length(); i++) {
+			char a = str.charAt(i);
+			char b = str.charAt(i - 1);
+			int c = a > b ? a - b : a + 26 - b;
+			sb.append(c % 26);
+		}
+		return sb.toString();
 	}
 	
 	public static void main(String[] args) {

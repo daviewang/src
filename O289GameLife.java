@@ -9,7 +9,7 @@ public class O289GameLife {
 		for (int i = 0; i < row; i++) 
 			for (int j = 0; j < col; j++) {
 				int x = getCount(board, i, j);
-				if (board[i][j] % 10 == 0) {
+				if ((board[i][j] & 1) == 0) {
 					if (x == 3) board[i][j] += 10;
 				}
 				else {
@@ -19,7 +19,7 @@ public class O289GameLife {
 		
 		for (int i = 0; i < row; i++)
 			for (int j = 0; j < col; j++) {
-				board[i][j] /= 10;
+				board[i][j] >>= 10;
 		}
 	}
 	
@@ -28,7 +28,7 @@ public class O289GameLife {
 		int[][] deltas = {{1,-1},{1,0},{1,1},{0,-1},{0,1},{-1,-1},{-1,0},{-1,1}};
 		for (int[] delta : deltas) {
 			if (row + delta[0] >= 0 && row + delta[0] < board.length && col + delta[1] >= 0 
-				&& col + delta[1] < board[0].length && board[row + delta[0]][col + delta[1]] % 10 == 1) {
+				&& col + delta[1] < board[0].length && (board[row + delta[0]][col + delta[1]] & 1) == 1) {
 				res++;
 			}
 		}

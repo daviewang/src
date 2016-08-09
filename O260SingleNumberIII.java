@@ -6,7 +6,7 @@ public class O260SingleNumberIII {
 			n ^= nums[i];
 		}
 		
-		n &= (~(n - 1));
+		n &= ~(n - 1);
 		
 		for (int i = 0; i < nums.length; i++) {
 			if ((n & nums[i]) == 0) {

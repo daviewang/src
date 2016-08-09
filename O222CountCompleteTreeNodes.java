@@ -7,18 +7,18 @@ public class O222CountCompleteTreeNodes {
 	public int countNodes(TreeNode root) {
         if (root == null) return 0;
         
-        int l = leftCount(root) + 1;
-        int r = rightCount(root) + 1;
+        int l = leftHeight(root) + 1;
+        int r = rightHeight(root) + 1;
         
         if (l == r) {
-        	return (2<<(l-1)) - 1;
+        	return (1<<l) - 1;
         }
         else {
         	return countNodes(root.left) + countNodes(root.right) + 1;
         }
     }
 	
-	private int leftCount(TreeNode root) {
+	private int leftHeight(TreeNode root) {
 		int res = 0;
 		while (root.left != null) {
 			res++;
@@ -27,7 +27,7 @@ public class O222CountCompleteTreeNodes {
 		return res;
 	}
 	
-	private int rightCount(TreeNode root) {
+	private int rightHeight(TreeNode root) {
 		int res = 0;
 		while (root.right != null) {
 			res++;

@@ -29,16 +29,17 @@ public class O218TheSkylineProblem {
 		
 		Collections.sort(walls, cp);
 		
+		//大到小
 		Comparator<Integer> pqComp = new Comparator<Integer>() {
 			public int compare(Integer a, Integer b) {
 				return b - a;
 			}
 		};
 		
-		PriorityQueue<Integer> pq = new PriorityQueue<>(11, pqComp);
+		PriorityQueue<Integer> pq = new PriorityQueue<>(10, pqComp);
 		pq.offer(0);
 		
-		int pre = 0;
+		int preHightest = 0;
 		
 		for (int[] wall : walls) {
 			if (wall[1] < 0) {
@@ -48,10 +49,11 @@ public class O218TheSkylineProblem {
 				pq.remove(wall[1]);
 			}
 			
-			int curr = pq.peek();
-			if (pre != curr) {
-				res.add(new int[]{wall[0], curr});
-				pre = curr;
+			int currHightest = pq.peek();
+			//考虑删除，不能只是<.
+			if (preHightest != currHightest) {
+				res.add(new int[]{wall[0], currHightest});
+				preHightest = currHightest;
 			}
 		}
 		return res;
