@@ -7,7 +7,7 @@ public class O174DungeonGame {
 		int col = dungeon[0].length;
 		int[][] dp = new int[len][col];
 		
-		dp[len - 1][col - 1] = Math.max(0 - dungeon[len - 1][col - 1], 0);
+		dp[len - 1][col - 1] = Math.max(-dungeon[len - 1][col - 1], 0);
 		for (int i = len - 2; i >= 0; i--) {
 			dp[i][col - 1] = Math.max(dp[i + 1][col - 1] - dungeon[i][col - 1], 0);
 		}
