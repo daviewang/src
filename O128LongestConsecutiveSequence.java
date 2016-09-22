@@ -31,7 +31,7 @@ public class O128LongestConsecutiveSequence {
 	
 	public static void main(String[] args) {
 		O128LongestConsecutiveSequence e = new O128LongestConsecutiveSequence();
-		int[] in = {-1, 1, 0};
+		int[] in = {1, 2, 3};
 		System.out.println(e.longestConsecutive(in));
 	}
 }

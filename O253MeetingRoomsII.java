@@ -43,10 +43,10 @@ public class O253MeetingRoomsII {
 	}
 	public static void main(String[] args) {
 		O253MeetingRoomsII e = new O253MeetingRoomsII();
-		Interval a = e.new Interval(0, 5);
-		Interval b = e.new Interval(3, 7);
-		Interval c = e.new Interval(4, 9);
+		Interval a = e.new Interval(0, 30);
+		Interval b = e.new Interval(15, 40);
+		Interval c = e.new Interval(35, 50);
 		Interval[] intervals = {a, b, c};
-		e.meetingRooms(intervals);
+		System.out.println(e.meetingRooms(intervals));
 	}
 }

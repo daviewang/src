@@ -8,6 +8,7 @@ public class O149MaxPointsLine {
 		Point() {x = 0; y = 0;}
 		Point(int a, int b) {x = a; y = b;}
 	}
+	
 	public int maxPoints(Point[] points) {
 		if (points == null || points.length == 0) return 0;
 		Map<Double, Integer> map = new HashMap<>();

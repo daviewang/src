@@ -11,7 +11,6 @@ public class O245ShortestWordDistanceIII {
 			if (word1.equals(word)) {
 				if (same) {
 					idx1 = idx2;
-					idx2 = i;
 				}
 				else {
 					idx1 = i;

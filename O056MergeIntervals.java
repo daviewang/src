@@ -37,7 +37,7 @@ public class O056MergeIntervals {
 		Arrays.sort(intervalsArray, cp);
 		
 		Interval mover = intervalsArray[0];
-		for (int i = 0; i < intervalsArray.length; i++) {
+		for (int i = 1; i < intervalsArray.length; i++) {
 			if (mover.end < intervalsArray[i].start) {
 				res.add(mover);
 				mover = intervalsArray[i];

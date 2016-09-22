@@ -11,8 +11,8 @@ public class O165CompareVersionNums {
 		int idx = 0;
 		
 		while (idx < n1 || idx < n2) {
-			int a = idx < n1 ? Integer.parseInt(v1[idx]) : 0;
-			int b = idx < n2 ? Integer.parseInt(v2[idx]) : 0;
+			int a = idx < n1 ? Integer.valueOf(v1[idx]) : 0;
+			int b = idx < n2 ? Integer.valueOf(v2[idx]) : 0;
 			if (a < b) {
 				return -1;
 			}
@@ -26,6 +26,6 @@ public class O165CompareVersionNums {
 	
 	public static void main(String[] args) {
 		O165CompareVersionNums e = new O165CompareVersionNums();
-		e.compareVersion("01", "1");
+		e.compareVersion("0", "1");
 	}
 }

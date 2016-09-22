@@ -12,7 +12,7 @@ public class O084LargestRectangleHistogram {
 			}
 			else {
 				int idx = stack.pop();
-				int width = 0;
+				int width;
 				if (!stack.isEmpty()) {
 					width = i - stack.peek() - 1;
 				}
@@ -33,5 +33,11 @@ public class O084LargestRectangleHistogram {
 			}
 		}
 		return res;
+	}
+	
+	public static void main(String[] args) {
+		O084LargestRectangleHistogram e = new O084LargestRectangleHistogram();
+		int[] in = {2, 7, 5, 6, 4};
+		e.largestRectangleArea(in);
 	}
 }

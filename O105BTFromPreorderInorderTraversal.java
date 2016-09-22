@@ -10,7 +10,7 @@ public class O105BTFromPreorderInorderTraversal {
 	
 	private TreeNode preInHelper(int[] preorder, int preStart, int preEnd,
 								 int[] inorder, int inStart, int inEnd) {
-		if (preStart > preEnd) return null;
+		if (preStart > preEnd || inStart > inEnd) return null;
 		TreeNode node = new TreeNode(preorder[preStart]);
 		int leftCount = inStart;
 		while (inorder[leftCount] != preorder[preStart]) {

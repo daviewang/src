@@ -31,6 +31,6 @@ public class O071SimplifyPath {
 	
 	public static void main(String[] args) {
 		O071SimplifyPath e = new O071SimplifyPath();
-		e.simplifyPath("/..");
+		e.simplifyPath("/a/./b/");
 	}
 }

@@ -13,7 +13,7 @@ public class O179LargestNum {
 			public int compare(String a, String b) {
 				String s1 = a + b;
 				String s2 = b + a;
-				return s1.compareTo(s2);
+				return s2.compareTo(s1);
 			}
 		};
 		
@@ -24,8 +24,14 @@ public class O179LargestNum {
 		}
 		StringBuilder sb = new StringBuilder();
 		for (String s : strNum) {
-			sb.insert(0, s);
+			sb.append(s);
 		}
 		return sb.toString();
+	}
+	
+	public static void main(String[] args) {
+		O179LargestNum e = new O179LargestNum();
+		int[] in = {1,2,3,4,5,6,7,8,9,0};
+		e.largestNumber(in);
 	}
 }

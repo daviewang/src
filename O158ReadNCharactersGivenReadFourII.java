@@ -7,6 +7,7 @@ public class O158ReadNCharactersGivenReadFourII extends Reader4{
 		int curr = 0;
 		
 		while (curr < n) {
+			//如果cacheIdx不为0，代表readCounts有剩余，也不为0
 			if (cacheIdx == 0) {
 				readCounts = read4(cache);
 			}

@@ -3,6 +3,16 @@ import java.util.List;
 
 public class O089GrayCode {
 	public List<Integer> grayCode(int n) {
+        List<Integer> res = new ArrayList<>();
+		res.add(0);
+		if (n == 0) return res;
+		for (int i = 0; i < n; i++)  {
+			for (int k = res.size() - 1; k >= 0; k--) {
+				res.add(res.get(k) | (1 << i));
+			}
+		}
+		return res;
+		/*
 		if (n == 0) {
 			List<Integer> res = new ArrayList<>();
 			res.add(0);
@@ -15,6 +25,7 @@ public class O089GrayCode {
 			nextGray.add(nextGray.get(i) | mask);
 		}
 		return nextGray;
+		*/
 	}
 	
 	public static void main(String[] args) {

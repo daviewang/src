@@ -7,27 +7,28 @@ public class O150EvaluateReversePolishNotation {
 		}
 		Stack<Integer> stack = new Stack<>();
 		for (int i = 0; i < tokens.length; i++) {
-			String c = tokens[i];
-			if (c.equals("+") || c.equals("-") || c.equals("*") || c.equals("/")) {
+			String s = tokens[i];
+			if (s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/")) {
+				char c = s.charAt(0);
 				int b = stack.pop();
 				int a = stack.pop();
-				switch(c.charAt(0)) {
-					case '+' : 
+				switch (c) {
+					case '+' :
 						stack.push(a + b);
 						break;
-					case '-' : 
+					case '-' :
 						stack.push(a - b);
 						break;
-					case '*' : 
+					case '*' :
 						stack.push(a * b);
 						break;
-					case '/' : 
+					case '/' :
 						stack.push(a / b);
 						break;
 				}
 			}
 			else {
-				stack.push(Integer.valueOf(c));
+				stack.push(Integer.valueOf(s));
 			}
 		}
 		return stack.pop();

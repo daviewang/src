@@ -30,10 +30,10 @@ public class O381InsertDeleteGetRandomDup {
 		int idx = map.get(val).iterator().next();
 		map.get(val).remove(idx);
 		if (idx < nums.size() - 1) {
-			int lastIdx = nums.get(nums.size() - 1);
-			nums.set(idx, lastIdx);
-			map.get(lastIdx).remove(nums.size() -1);
-			map.get(lastIdx).add(idx);
+			int lastVal = nums.get(nums.size() - 1);
+			nums.set(idx, lastVal);
+			map.get(lastVal).remove(nums.size() -1);
+			map.get(lastVal).add(idx);
 		}
 		nums.remove(nums.size() - 1);
 		if (map.get(val).isEmpty()) {

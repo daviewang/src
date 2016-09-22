@@ -4,20 +4,22 @@ public class O124BTMaxPathSum {
 		TreeNode left, right;
 		TreeNode(int x) { val = x;}
 	}
-	int maxRes = Integer.MIN_VALUE;
+	int maxValue = Integer.MIN_VALUE;
+	
 	public int maxPathSum(TreeNode root) {
 		helper(root);
-		return maxRes;
+		return maxValue;
 	}
 	
 	private int helper(TreeNode node) {
 		if (node == null) {
 			return 0;
 		}
-		int leftMax = helper(node.left);
-		int rightMax = helper(node.right);
-		int currSum = Math.max(Math.max(leftMax + node.val, rightMax + node.val), node.val);
-		int currMax = Math.max(leftMax + rightMax + node.val, currSum);
-		return Math.max(currMax, maxRes);
+		int left = helper(node.left);
+		int right = helper(node.right);
+		int res = Math.max(Math.max(left + node.val, right + node.val), node.val);
+		int currMax = Math.max(res, left + right + node.val);
+		maxValue = Math.max(maxValue, currMax);
+		return res;
 	}
 }

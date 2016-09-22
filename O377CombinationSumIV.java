@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-import java.util.*;
-
->>>>>>> origin/master
 public class O377CombinationSumIV {
 	 public int combinationSum4(int[] nums, int target) {
         if (nums == null || nums.length == 0) {

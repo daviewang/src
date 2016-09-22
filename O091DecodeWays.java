@@ -24,7 +24,7 @@ public class O091DecodeWays {
 		if (s.charAt(0) == '0') {
 			return false;
 		}
-		int val = Integer.parseInt(s);
+		int val = Integer.valueOf(s);
 		if (val >= 1 && val <= 26) {
 			return true;
 		}
@@ -35,6 +35,6 @@ public class O091DecodeWays {
 	
 	public static void main(String[] args) {
 		O091DecodeWays e = new O091DecodeWays();
-		e.numDecodings("01");
+		System.out.println(e.numDecodings("10"));
 	}
 }
