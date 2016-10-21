@@ -25,6 +25,6 @@ public class O316RemoveDupLetters {
 	//"eeaaaabcd"
 	public static void main(String[] args) {
 		O316RemoveDupLetters e = new O316RemoveDupLetters();
-		e.removeDuplicateLetters("eaeaaabcd");
+		e.removeDuplicateLetters("eaec");
 	}
 }

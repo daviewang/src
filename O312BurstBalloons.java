@@ -22,4 +22,10 @@ public class O312BurstBalloons {
 		}
 		return dp[1][len];
 	}
+	
+	public static void main(String[] args) {
+		int[] in = {3, 1, 5, 8};
+		O312BurstBalloons e = new O312BurstBalloons();
+		e.maxCoins(in);
+	}
 }

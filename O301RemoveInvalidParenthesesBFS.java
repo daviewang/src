@@ -7,30 +7,29 @@ import java.util.Set;
 
 public class O301RemoveInvalidParenthesesBFS {
 	public List<String> removeInvalidParentheses(String s) {
-		List<String> res = new ArrayList<>();
-		
+        List<String> res = new ArrayList<>();
 		Queue<String> queue = new LinkedList<>();
-		Set<String> set = new HashSet<>();	
 		queue.offer(s);
 		boolean isFound = false;
-		
-		while (!queue.isEmpty()) {
-			String temp = queue.poll();
-			if (isValid(temp)) {
-				isFound = true;
-				res.add(temp);
-			}
-			if (isFound) {
-				continue;
-			}
-			for (int i = 0; i < temp.length(); i++) {
-				if (temp.charAt(i) != '(' && temp.charAt(i) != ')') {
-					continue;
+		Set<String> set = new HashSet<>();
+		while (!queue.isEmpty() && !isFound) {
+			int size = queue.size();
+			for (int i = 0; i < size; i++) {
+				String temp = queue.poll();
+				if (isValid(temp)) {
+					isFound = true;
+					res.add(temp);
 				}
-				String nextLevelStr = temp.substring(0, i) + temp.substring(i + 1);
-				if (!set.contains(nextLevelStr)) {
-					queue.add(nextLevelStr);
-					set.add(nextLevelStr);
+				else {
+					for (int j = 0; j < temp.length(); j++) {
+						if (temp.charAt(j) == '(' || temp.charAt(j) == ')') {
+							String nextLevel = temp.substring(0, j) + temp.substring(j + 1);
+							if (!set.contains(nextLevel)) {
+								set.add(nextLevel);
+								queue.add(nextLevel);
+							}
+						}
+					}
 				}
 			}
 		}
@@ -61,6 +60,6 @@ public class O301RemoveInvalidParenthesesBFS {
 	
 	public static void main(String[] args) {
 		O301RemoveInvalidParenthesesBFS e = new O301RemoveInvalidParenthesesBFS();
-		e.removeInvalidParentheses("()())()");		
+		e.removeInvalidParentheses("(k()");		
 	}
 }

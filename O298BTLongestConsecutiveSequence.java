@@ -27,40 +27,35 @@ public class O298BTLongestConsecutiveSequence {
 		helper(node.right, localMax, node.val + 1);
 	}
 	*/
-	int maxVal = 1;
 	public int longestConsecutiveSequence(TreeNode root) {
-		if (root == null) return 0;
-		helper(root, 1);
-		return maxVal;
+		int[] res = new int[1];
+		helper(root, 1, res);
+		return res[0];
 	}
 	
-	private void helper(TreeNode node, int localMax) {
+	private void helper(TreeNode node, Integer singleRes, int[] res) {
 		if (node == null) {
-			maxVal = Math.max(maxVal, localMax - 1);
+			
 			return;
 		}
-		if (node.left != null) {
-			if (node.val == node.left.val - 1) {
-				helper(node.left, localMax + 1);
-			}
-			else {
-				maxVal = Math.max(maxVal, localMax);
-				helper(node.left, 1);
-			}
-		} 
-			
-		if (node.right != null) {
-			if (node.val == node.right.val - 1) {
-				helper(node.right, localMax + 1);
-			}
-			else {
-				maxVal = Math.max(maxVal, localMax);
-				helper(node.right, 1);
-			}
-		} 
 		
-		// leaf, right & left == null
-		maxVal = Math.max(maxVal, localMax);
+		if (node.left == null && node.right == null) {
+			res[0] = Math.max(res[0], singleRes);
+		}
+		
+		if (node.left != null) {
+			helper(node.left, 1, res);
+		}
+		
+		if (node.right != null) {
+			if (node.val + 1 == node.right.val) {
+				helper(node.right, singleRes + 1, res);
+			}
+			else {
+				res[0] = Math.max(res[0], singleRes);
+				helper(node.right, 1, res);
+			}
+		}
 	}
 	
 	public static void main(String[] args) {

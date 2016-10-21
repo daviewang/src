@@ -31,7 +31,7 @@ public class O368LargestDivisibleSubset {
 	}
 	public static void main(String[] args) {
 		O368LargestDivisibleSubset e = new O368LargestDivisibleSubset();
-		int[] nums = {1,2,3};
+		int[] nums = {2, 4, 8};
 		e.largestDivisibleSubset(nums);
 	}
 }

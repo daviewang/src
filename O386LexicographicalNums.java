@@ -15,6 +15,7 @@ public class O386LexicographicalNums {
         	}
         	else {
         		while ((curr / 10) % 10 == 9) { //n = 34 如果是19，下一个就是20.所以只要判断到19.
+        			//处理连续的9
         			//199 next one is 2
         			curr /= 10;
         		}
@@ -25,6 +26,6 @@ public class O386LexicographicalNums {
 	}
 	public static void main(String[] args) {
 		O386LexicographicalNums e = new O386LexicographicalNums();
-		e.lexicalOrder(13);
+		e.lexicalOrder(500);
 	}
 }

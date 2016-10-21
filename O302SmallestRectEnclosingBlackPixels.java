@@ -22,7 +22,7 @@ public class O302SmallestRectEnclosingBlackPixels {
 		xMax = Math.max(xMax, x);
 		yMin = Math.min(yMin, y);
 		yMax = Math.max(yMax, y);
-		visited[x ][y] = true;
+		visited[x][y] = true;
 		dfs(image, x - 1, y, visited);
 		dfs(image, x + 1, y, visited);
 		dfs(image, x, y - 1, visited);

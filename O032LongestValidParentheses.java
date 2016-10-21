@@ -30,6 +30,6 @@ public class O032LongestValidParentheses {
 	}
 	public static void main(String[] args) {
 		O032LongestValidParentheses e = new O032LongestValidParentheses();
-		e.longestValidParentheses(")()(())");
+		e.longestValidParentheses("()))");
 	}
 }

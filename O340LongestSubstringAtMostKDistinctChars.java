@@ -1,34 +1,31 @@
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
-import java.util.Queue;
 
 public class O340LongestSubstringAtMostKDistinctChars {
 	public int lengthOfLongestSubstringKDistinct(String s, int k) {
-		if (s == null || s.length() < k) return 0;
-		Map<Character, Integer> map = new HashMap<>();
-		int start = 0; 
-		int end = 0;
 		int res = 0;
+		if (s == null || s.length() == 0) {
+			return res;
+		}
+		Map<Character, Integer> map = new HashMap<>();
+		int idx = 0;
+		int start = 0;
 		
-		while (end < s.length()) {
-			if (map.size() <= k) {
-				char c = s.charAt(end);
-				map.put(c, end);
-				end++;
-			}
+		while (idx < s.length()) {
+			char c = s.charAt(idx);
+			map.put(c, idx++);
 			if (map.size() > k) {
 				int leftMost = s.length();
-				for (int i : map.values()) {
-					leftMost = Math.min(leftMost, i);
+				for (Integer value : map.values()) {
+					leftMost = Math.min(leftMost, value);
 				}
-				char c = s.charAt(leftMost);
-				map.remove(c);
 				start = leftMost + 1;
+				char removeChar = s.charAt(leftMost);
+				map.remove(removeChar);
 			}
-			res = Math.max(res, end - start);
+			res = Math.max(res, idx - start);
 		}
-		return res;	
+		return res;
 		/*
 		int res = 0;
 		if (s == null || s.length() == 0) return 0;
@@ -61,6 +58,6 @@ public class O340LongestSubstringAtMostKDistinctChars {
 	}
 	public static void main(String[] args) {
 		O340LongestSubstringAtMostKDistinctChars e = new O340LongestSubstringAtMostKDistinctChars();
-		System.out.println(e.lengthOfLongestSubstringKDistinct("eceba", 2));
+		System.out.println(e.lengthOfLongestSubstringKDistinct("AABABBA", 2));
 	}
 }

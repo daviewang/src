@@ -4,14 +4,12 @@ import java.util.List;
 public class O320GeneralizedAbbreviation {
 	public List<String> generateAbbreviations(String word) {
 		List<String> res = new ArrayList<>();
-		if (word == null || word.length() == 0) {
-			return res;
-		}
-		helper(word, res, "", 0, 0);
+		if (word == null || word.length() == 0) return res;
+		dfs(word, res, "", 0, 0);
 		return res;
 	}
 	
-	public void helper(String word, List<String> res, String singleRes, int pos, int count) {
+	private void dfs(String word, List<String> res, String singleRes, int count, int pos) {
 		if (pos == word.length()) {
 			if (count != 0) {
 				singleRes += count;
@@ -19,12 +17,14 @@ public class O320GeneralizedAbbreviation {
 			res.add(singleRes);
 			return;
 		}
-		helper(word, res, singleRes, pos + 1, count + 1);
-		if (count == 0) {
-			helper(word, res, singleRes + word.charAt(pos), pos + 1, 0);
+		dfs(word, res, singleRes, count + 1, pos + 1); // ignore it
+		
+		//keep it
+		if (count != 0) {
+			dfs(word, res, singleRes + count + word.charAt(pos), 0, pos + 1);
 		}
 		else {
-			helper(word, res, singleRes + count + word.charAt(pos), pos + 1, 0);
+			dfs(word, res, singleRes + word.charAt(pos), 0, pos + 1);
 		}
 	}
 	public static void main(String[] args) {

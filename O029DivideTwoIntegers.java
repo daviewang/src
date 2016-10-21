@@ -37,6 +37,6 @@ public class O029DivideTwoIntegers {
 	
 	public static void main(String[] args) {
 		O029DivideTwoIntegers e = new O029DivideTwoIntegers();
-		e.divide(Integer.MAX_VALUE, 1);
+ 		e.divide(15, 3);
 	}
 }

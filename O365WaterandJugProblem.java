@@ -13,4 +13,9 @@ public class O365WaterandJugProblem {
 		}
 		return a;
 	}
+	
+	public static void main(String[] args) {
+		O365WaterandJugProblem e = new O365WaterandJugProblem();
+		e.GCD(12, 8);
+	}
 }

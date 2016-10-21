@@ -49,6 +49,6 @@ public class O358RearrangeStringkDistanceApart {
 	}
 	public static void main(String[] args) {
 		O358RearrangeStringkDistanceApart e = new O358RearrangeStringkDistanceApart();
-		e.rearrangeString("abacabcd", 2);
+		e.rearrangeString("aaabc", 3);
 	}
 }

@@ -14,10 +14,10 @@ public class O348TicTacToe {
 		rows[row] += addOn;
 		cols[col] += addOn;
 		if (row == col) 
-			diagonal++;
+			diagonal += addOn;
 		
 		if (col == (cols.length - 1 - row))
-			antiDiagonal++;
+			antiDiagonal += addOn;
 		
 		if (Math.abs(rows[row]) == rows.length ||
 			Math.abs(cols[col]) == cols.length ||

@@ -25,7 +25,7 @@ public class O372SuperPow {
 	public static void main(String[] args) {
 		O372SuperPow e = new O372SuperPow();
 		int[] b = {2, 0, 0};
-//		System.out.println(e.pow(2, 3, 1337));
+		System.out.println(e.pow(2, 3, 3));
 		System.out.println(e.superPow(2147483647, b));
 	}
 }

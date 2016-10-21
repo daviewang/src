@@ -1,7 +1,7 @@
 public class O370RangeAddition {
 	public int[] getModifiedArray(int length, int[][] updates) {
 		if (length == 0) {
-			return new int[]{};
+			return new int[0];
 		}
 		int[] res = new int[length];
 		for (int[] update : updates) {

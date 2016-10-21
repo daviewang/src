@@ -13,12 +13,12 @@ public class O394DecodeString {
 		while (idx < s.length()) {
 			char c = s.charAt(idx);
 			if (Character.isDigit(c)) {
-				int count = 0;
+				String singleNum = "";
 				while (Character.isDigit(c)) {
-					count = 10 * count + (c - '0');
+					singleNum += c;
 					c = s.charAt(++idx);
 				}
-				countStack.push(count);
+				countStack.push(Integer.valueOf(singleNum));
 			}
 			else if (c == '[') {
 				resStack.push(res);

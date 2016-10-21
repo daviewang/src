@@ -21,7 +21,7 @@ public class O393UTF8Validation {
 		}
 		return count == 0;
 	}
-	
+	//from 1 to 4 bytes long
 	private int getOneBitCountFromHead(int num) {
 		if ((num & 0b11110000) == 0b11110000) return 3;
 		if ((num & 0b11100000) == 0b11100000) return 2;

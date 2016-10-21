@@ -16,24 +16,23 @@ public class O315CountSmallerNumsAfterSelf {
 		return Arrays.asList(res);
 	}
 	
-	private int findIndex(List<Integer> sorted, int target) {
-		if (sorted.size() == 0) 
-			return 0;
+	private int findIndex(List<Integer> sorted, int val) {
+		if (sorted.size() == 0) return 0;
 		int start = 0;
 		int end = sorted.size() - 1;
-		if (target < sorted.get(start)) {
-			return 0;
-		}
-		if (sorted.get(end) < target) {
-			return end + 1;
-		}
-		while (start < end) {
+		if (val < sorted.get(start)) return 0;
+		if (sorted.get(end) < val) return sorted.size();
+		
+		while (start <= end) {
 			int mid = start + (end - start) / 2;
-			if (sorted.get(mid) < target) {
+			if (sorted.get(mid) < val) {
 				start = mid + 1;
 			}
+			else if (sorted.get(mid) > val) {
+				end = mid - 1;
+			}
 			else {
-				end = mid;
+			    return mid;
 			}
 		}
 		return end;
@@ -41,7 +40,7 @@ public class O315CountSmallerNumsAfterSelf {
 	
 	public static void main(String[] args) {
 		O315CountSmallerNumsAfterSelf e = new O315CountSmallerNumsAfterSelf();
-		int[] in = {5,2,3,6,1};
+		int[] in = {5,2,6,1};
 		e.countSmaller(in);
 	}
 }

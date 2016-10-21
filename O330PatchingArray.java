@@ -21,7 +21,7 @@ public class O330PatchingArray {
 	
 	public static void main(String[] args) {
 		O330PatchingArray e = new O330PatchingArray();
-		int[] nums = {};
+		int[] nums = {2};
 		System.out.println(e.minPatches(nums, 8));
 	}
 }
